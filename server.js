@@ -29,7 +29,7 @@
     app.use('/api', apiRoutes);
      
     // setting port number for running server
-    var port = process.env.port || 3000;
+    var port = process.env.PORT || 3000;
      
     // starting express server
     app.listen(port, function() {
