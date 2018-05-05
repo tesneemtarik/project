@@ -1,0 +1,40 @@
+<h2 ng-show="contact._id!=null">Edit</h2>
+<h2 ng-hide="contact._id!=null">Create</h2>
+<hr>
+<form name="contactForm" ng-submit="saveData(contact)" novalidate class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2">Name</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="contact.name" name="name" ng-required="true" class="form-control" />
+            <p ng-show="contactForm.name.$error.required && (contactForm.$submitted || contactForm.name.$dirty)" class="text-danger">Name Required!</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Address</label>
+        <div class="col-md-10">
+            <textarea name="address" ng-model="contact.address" ng-required="true" class="form-control"></textarea>
+            <p ng-show="contactForm.address.$error.required && (contactForm.$submitted || contactForm.address.$dirty)" class="text-danger">Address Required!</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Job</label>
+        <div class="col-md-10">
+            <textarea name="job" ng-model="contact.job" ng-required="true" class="form-control"></textarea>
+            <p ng-show="contactForm.job.$error.required && (contactForm.$submitted || contactForm.job.$dirty)" class="text-danger">Job Required!</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Number</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="contact.number" name="number" ng-required="true" class="form-control" />
+            <p ng-show="contactForm.number.$error.required && (contactForm.$submitted || contactForm.number.$dirty)" class="text-danger">Number Required!</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Update" class="btn btn-primary" ng-show="contact._id!=null" />
+            <input type="submit" value="Save" class="btn btn-primary" ng-hide="contact._id!=null" />
+            <a ui-sref="contacts" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>

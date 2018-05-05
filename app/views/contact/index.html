@@ -1,0 +1,23 @@
+<h2>Contact</h2>
+<table class="table" ng-if="contacts.length>0">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Job</th>
+        <th>Number</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="contact in contacts">
+        <td>{{contact.name}}</td>
+        <td>{{contact.address}}</td>
+        <td>{{contact.job}}</td>
+        <td>{{contact.number}}</td>
+        <td>
+            <a ui-sref="edit({id:contact._id})">Edit</a> |
+            <a href="#" ng-click="deletecontact(contact._id)">Delete</a>
+        </td>
+    </tr>
+</table>
+<div ng-if="contacts.length==0">
+    No record found !!
+</div>
