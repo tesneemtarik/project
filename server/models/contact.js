@@ -2,7 +2,7 @@ var mongoose = require("mongoose"),
     Schema = mongoose.Schema,
     objectId = mongoose.Schema.ObjectId;
 
-var userSchema = new Schema({
+var contactSchema = new Schema({
     _id: {
         type: objectId,
         auto: true
@@ -27,6 +27,6 @@ var userSchema = new Schema({
     versionKey: false
 });
 
-var user = mongoose.model('users', userSchema);
+var contact = mongoose.model('contacts', contactSchema);
 
-module.exports = user;
+module.exports = contact;

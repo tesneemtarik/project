@@ -1,56 +1,56 @@
 var express = require("express"),
     router = express.Router(),
-    user = require("../models/user.js");
+    contact = require("../models/contact.js");
 
-router.get("/", function (req, res) {
-    user.find({}, function (err, data) {
+router.get("/", function(req, res) {
+    contact.find({}, function(err, data) {
         if (err) {
             res.send("error");
             return;
         }
         res.send(data);
     });
-}).get("/:id", function (req, res) {
+}).get("/:id", function(req, res) {
     var id = req.params.id;
-    user.find({
+    contact.find({
         _id: id
-    }, function (err, data) {
+    }, function(err, data) {
         if (err) {
             res.send("error");
             return;
         }
         res.send(data[0]);
     });
-}).post("/", function (req, res) {
+}).post("/", function(req, res) {
     var obj = req.body;
-    var model = new user(obj);
-    model.save(function (err) {
+    var model = new contact(obj);
+    model.save(function(err) {
         if (err) {
             res.send("error");
             return;
         }
         res.send("created");
     });
-}).put("/:id", function (req, res) {
+}).put("/:id", function(req, res) {
     var id = req.params.id;
     var obj = req.body;
 
-    user.findByIdAndUpdate(id, {
+    contact.findByIdAndUpdate(id, {
             name: obj.name,
             number: obj.number,
             address: obj.address,
             job: obj.job
         },
-        function (err) {
+        function(err) {
             if (err) {
                 res.send("error");
                 return;
             }
             res.send("updated");
         });
-}).delete("/:id", function (req, res) {
+}).delete("/:id", function(req, res) {
     var id = req.params.id;
-    user.findByIdAndRemove(id, function (err) {
+    contact.findByIdAndRemove(id, function(err) {
         if (err) {
             res.send("error");
             return;

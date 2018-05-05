@@ -1,28 +1,28 @@
-(function () {
+(function() {
     'use strict';
 
     angular.module('app', [
             "ui.router"
         ])
-        .config(function ($stateProvider, $urlRouterProvider) {
+        .config(function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise("/");
 
-            $stateProvider.state("users", {
+            $stateProvider.state("contacts", {
                 url: "/",
-                templateUrl: "/views/user/index.html",
-                controller: "userController"
+                templateUrl: "/views/contact/index.html",
+                controller: "contactController"
             }).state("create", {
                 url: "/create",
-                templateUrl: "/views/user/create.html",
-                controller: "userController"
+                templateUrl: "/views/contact/create.html",
+                controller: "contactController"
             }).state("edit", {
                 url: "/edit/:id",
-                templateUrl: "/views/user/create.html",
-                controller: "userController"
+                templateUrl: "/views/contact/create.html",
+                controller: "contactController"
             }).state("details", {
                 url: "/details/:id",
-                templateUrl: "/views/user/details.html",
-                controller: "userController"
+                templateUrl: "/views/contact/details.html",
+                controller: "contactController"
             });
         })
         .constant("globalConfig", {

@@ -1,33 +1,33 @@
-(function () {
+(function() {
     'use strict';
 
     angular
         .module('app')
-        .factory('userService', Service);
+        .factory('contactService', Service);
 
     Service.$inject = ['$http', 'globalConfig'];
 
     function Service($http, globalConfig) {
         var url = "";
         return {
-            getUsers: function () {
-                url = globalConfig.apiAddress + "/user";
+            getcontacts: function() {
+                url = globalConfig.apiAddress + "/contact";
                 return $http.get(url);
             },
-            getUser: function (id) {
-                url = globalConfig.apiAddress + "/user/" + id;
+            getcontact: function(id) {
+                url = globalConfig.apiAddress + "/contact/" + id;
                 return $http.get(url);
             },
-            createUser: function (user) {
-                url = globalConfig.apiAddress + "/user";
-                return $http.post(url, user);
+            createcontact: function(contact) {
+                url = globalConfig.apiAddress + "/contact";
+                return $http.post(url, contact);
             },
-            updateUser: function (user) {
-                url = globalConfig.apiAddress + "/user/" + user._id;
-                return $http.put(url, user);
+            updatecontact: function(contact) {
+                url = globalConfig.apiAddress + "/contact/" + contact._id;
+                return $http.put(url, contact);
             },
-            deleteUser: function (id) {
-                url = globalConfig.apiAddress + "/user/" + id;
+            deletecontact: function(id) {
+                url = globalConfig.apiAddress + "/contact/" + id;
                 return $http.delete(url);
             }
         };
