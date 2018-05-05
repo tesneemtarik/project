@@ -1,0 +1,25 @@
+{
+  "name": "swp",
+  "version": "1.0.0",
+  "description": "sudan white pages",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "keywords": [
+    "swp"
+  ],
+  "author": "teso",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.10",
+    "angular-ui-router": "^1.0.3",
+    "bootstrap": "^4.1.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.16"
+  }
+}
